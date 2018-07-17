@@ -41,6 +41,8 @@
 
       //Load in GeoJSON data
       d3.json("world.geojson", function(json) {
+        //view the data
+        console.log(json);
         //Bind data and create one path per GeoJSON feature
         layerWorld.selectAll("path")
            .data(json.features)
@@ -48,8 +50,21 @@
            .append("path")
            .attr("d", path)
            .style("fill", "#313030")
-           .style("stroke", "#5a5959");
+           .style("stroke", "#5a5959")
+           .on("mouseover", handleMouseOver)
+           .on("mouseout", handleMouseOut);
       }); 
+      // Create Event Handlers for mouse
+      function handleMouseOver(d, i) {  // Add interactivity
+      // Use D3 to select element, change color 
+        d3.select(this)
+          .style("fill", "orange");
+      };
+      function handleMouseOut(d, i) {
+      // Use D3 to select element, change color back to normal
+        d3.select(this)
+          .style("fill", "#313030")
+      };
     </script>
   </body>
 </html>
