@@ -1,15 +1,10 @@
-body {
-        	background-color: black;
-        	color: white;
-        	font-family: sans-serif;
-        	text-align: center;
-    		} 
-
-#map { 
-  height: 500px; 
-  width:100%;
-} 
-#map_kartverket { 
-  height: 500px; 
-  width:100%;
-}
+html, body {
+      font-family: sans-serif;
+      width: 100%;
+      background-color: black;
+      color: white;
+    }
+#map {
+      height: 750px;
+      width: 100%;
+    }
