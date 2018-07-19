@@ -1,0 +1,167 @@
+{
+    "version": 8,
+    "name": "BergenDarkmode",
+    "metadata": {
+        "mapbox:origin": "basic-template-v1",
+        "mapbox:autocomposite": true,
+        "mapbox:type": "template",
+        "mapbox:sdk-support": {
+            "js": "0.46.0",
+            "android": "6.0.0",
+            "ios": "4.0.0"
+        },
+        "mapbox:trackposition": false
+    },
+    "center": [
+        5.326969379041202,
+        60.39360277336942
+    ],
+    "zoom": 13.479533004671785,
+    "bearing": 0,
+    "pitch": 0,
+    "sources": {
+        "composite": {
+            "url": "mapbox://maaka.cjjs6v907377q32olkjnajpuk-0gh4y,maaka.cjjs6qxxj15gq34o72m0q1780-7nlvp,maaka.cjjs70snr3abu2qphe9n83975-6ndc9,maaka.cfxqs02l",
+            "type": "vector"
+        }
+    },
+    "sprite": "mapbox://sprites/maaka/cjjs78sta12ql2rnthu2fh5ne",
+    "glyphs": "mapbox://fonts/maaka/{fontstack}/{range}.pbf",
+    "layers": [
+        {
+            "id": "background",
+            "type": "background",
+            "metadata": {},
+            "layout": {
+                "visibility": "visible"
+            },
+            "paint": {}
+        },
+        {
+            "id": "bergenlanduse-8s38u7",
+            "type": "fill",
+            "metadata": {},
+            "source": "composite",
+            "source-layer": "BergenLanduse-8s38u7",
+            "layout": {
+                "visibility": "visible"
+            },
+            "paint": {
+                "fill-color": [
+                    "match",
+                    [
+                        "get",
+                        "objtype"
+                    ],
+                    "Innsjø",
+                    "hsl(237, 100%, 31%)",
+                    "Myr",
+                    "hsl(163, 100%, 52%)",
+                    "Havflate",
+                    "#00089e",
+                    "Gravplass",
+                    "hsla(113, 100%, 28%, 0.5)",
+                    "Skog",
+                    "hsla(113, 100%, 28%, 0.5)",
+                    "#000000"
+                ]
+            }
+        },
+        {
+            "id": "buildings",
+            "type": "fill",
+            "source": "composite",
+            "source-layer": "Buildings",
+            "filter": [
+                "in",
+                "$type",
+                "LineString",
+                "Point",
+                "Polygon"
+            ],
+            "layout": {
+                "visibility": "visible"
+            },
+            "paint": {
+                "fill-color": "hsla(33, 100%, 53%, 0.61)",
+                "fill-outline-color": "hsl(27, 100%, 51%)"
+            }
+        },
+        {
+            "id": "rails",
+            "type": "line",
+            "source": "composite",
+            "source-layer": "Rails",
+            "layout": {
+                "visibility": "visible"
+            },
+            "paint": {
+                "line-color": [
+                    "match",
+                    [
+                        "get",
+                        "medium"
+                    ],
+                    "T",
+                    "hsla(0, 0%, 100%, 0.5)",
+                    "hsl(0, 0%, 100%)"
+                ],
+                "line-width": [
+                    "match",
+                    [
+                        "get",
+                        "jernbanety"
+                    ],
+                    "T",
+                    2,
+                    5
+                ],
+                "line-dasharray": [
+                    1,
+                    1
+                ]
+            }
+        },
+        {
+            "id": "roads",
+            "type": "line",
+            "source": "composite",
+            "source-layer": "Roads",
+            "layout": {
+                "visibility": "visible"
+            },
+            "paint": {
+                "line-color": [
+                    "match",
+                    [
+                        "get",
+                        "medium"
+                    ],
+                    "L",
+                    "hsla(0, 0%, 100%, 0.5)",
+                    "hsl(0, 0%, 100%)"
+                ],
+                "line-width": [
+                    "match",
+                    [
+                        "get",
+                        "objtype"
+                    ],
+                    "GangSykkelveg",
+                    1,
+                    "Traktorveg",
+                    1,
+                    "Sti",
+                    1,
+                    2.5
+                ]
+            }
+        }
+    ],
+    "created": "2018-07-19T06:53:23.057Z",
+    "id": "cjjs78sta12ql2rnthu2fh5ne",
+    "modified": "2018-07-19T07:46:46.996Z",
+    "owner": "maaka",
+    "visibility": "private",
+    "draft": false
+}
